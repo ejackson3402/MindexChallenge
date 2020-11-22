@@ -13,6 +13,10 @@ public class Compensation {
     //the date from which this compensation info is in effect
     private String effectiveDate;
 
+    public Compensation(){
+
+    }
+
     public Compensation(Employee employee, float salary, String effectiveDate){
         this.employee = employee;
         this.salary = salary;

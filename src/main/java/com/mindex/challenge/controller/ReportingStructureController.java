@@ -1,5 +1,6 @@
 package com.mindex.challenge.controller;
 
+import com.mindex.challenge.data.Employee;
 import com.mindex.challenge.data.ReportingStructure;
 import com.mindex.challenge.service.EmployeeService;
 import com.mindex.challenge.service.ReportingService;
@@ -33,6 +34,7 @@ public class ReportingStructureController {
     @GetMapping("/reporting/{id}")
     public ReportingStructure create(@PathVariable String id) {
         LOG.debug("Received reporting structure create request for id [{}]", id);
-        return reportingService.create(employeeService.read(id));
+        Employee employee = employeeService.read(id);
+        return reportingService.create(employee);
     }
 }
